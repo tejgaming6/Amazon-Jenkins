@@ -41,12 +41,21 @@ pipeline {
 
   post{
 
+       always{
+       echo 'clean stuff'
+   }
   success{
      echo 'Build success'
   }
     
-  failure{
+  unstable{
+       echo 'check with qa team'
+   }
+   failure{
        echo 'Failure in the build'
+   }
+    aborted{
+       echo 'manually stopped by the user'
    }
 
   }
